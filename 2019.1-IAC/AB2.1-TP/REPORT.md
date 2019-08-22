@@ -3,26 +3,23 @@
 * Página do repositório do trabalho ([link GitHub](TODO)) 
 
 * Discente 1
-	* Nome: TODO
-	* Matrícula: TODO 
-	* Distribuição da nota (%): TODO
+	* Nome: Danilo Felipe Oliveira Silva
+	* Matrícula: 19110976
+	* Distribuição da nota (%): 36.6
 * Discente 2
-	* Nome: TODO
-	* Matrícula: TODO
-	* Distribuição da nota (%): TODO
+	* Nome: Ester Albuquerque Aleixo de Andrade
+	* Matrícula: 19110982
+	* Distribuição da nota (%): 41.3
 * Discente 3
-	* Nome: TODO
-	* Matrícula: TODO
-	* Distribuição da nota (%): TODO		
+	* Nome: Juliana Karla de Carvalho Melo
+	* Matrícula: 19111161
+	* Distribuição da nota (%): 22.1		
 	
 # Resultados
 
-* TODO: Plotar um gráfico com os resultados das medições das seguintes métricas utilizadas para avaliar o comportamento do **processo filho**:
-	*  **UCP**: consumo da UCP em porcentagem.
-	*  **UCP-MEM**: consumo da memória principal em Kilobytes.
-* TODO: Cada métrica deve ser plotada em duas curvas separadas.
-* TODO: o eixo das abscissas deve representar o tempo medido a cada segundo e o eixo das coordenadas deve representar a métrica medida.
+* **Gráfico de consumo da CPU e da MEMÓRIA**:
 
+![GRAFICO](https://i.imgur.com/f49cprn.png)
 
 # Discussão
 
