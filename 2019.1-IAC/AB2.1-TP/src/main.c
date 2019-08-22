@@ -1,33 +1,62 @@
-#include <unistd.h> 
-#include <sys/types.h> 
-#include <sys/wait.h> 
-#include <stdio.h> 
+#include <stdio.h>
+#include <unistd.h>
+#include <time.h>
 #include <stdlib.h>
+#include <errno.h>
+#include <sys/wait.h>
+#include <string.h>
+#include <sys/types.h>
 
 int main (int argc, char *argv[], char *envp[]) {
 
-int pid ; /* identificador de processo */
+    int pid = fork(); // The 'pid' identifies the process that is running.
+    char comma[100], save_pid[100];
 
-pid = fork () ; /* replicacção do processo */
+    // Check if the fork failed
+    if (pid < 0) {
+        perror ("Error: ");
+        exit(-1); // End the process with an error code (-1)
+    
+    } else if (pid == 0) { // I'm the child process
 
-if ( pid < 0 ) { /* se o fork não funcionou */
-	perror ("Erro: ") ;
-	exit (-1) ; /* encerra o processo com código de erro -1 */ 
-}
-else if( pid > 0 ) /* se sou o processo pai*/ 
-{
-	//TODO guarde a cada segundo o consumo de memória (em Kilobytes) e CPU (em porcentagem) do processo filho
-	//TODO após 10 segundos de execução, mate o proceso filho
-}
-else /* senão, sou o processo filho (pid == 0) */ 
-{
-	//TODO se argv[1] for igual a 'cpu', executar código com utilização intensa da UCP
-	//TODO se argv[1] for igual a 'cpu-mem', executar código com utilização intensa da UCP e da memória
+        if(strcmp(argv[1], "ucp") == 0) { // Check if argv[1] is "ucp" to monitor cpu usage
+            for (;;) {}                  // Infinite loop that is cpu intensive
+        } else if(strcmp(argv[1], "ucp-mem") == 0) { // Check if argv[1] is "ucp-mem" to monitor cpu and memory usage
+            for (;;) {                  // Infinite loop that is cpu and memory intensive
+                malloc(sizeof(char));   // Memory allocation
+            } 
+        }
+    
+    } else {  // I'm the parent process
+        sprintf(save_pid, "%d", pid); // Save the current process identifier
+        
+        if (strcmp (argv[1], "ucp") == 0) { 
+            
+            printf ("# CPU USAGE #\n");
+            strcpy(comma, "ps -e -o pid,pcpu | grep "); // Save in 'comma' the bash command
+            strcat(comma, save_pid); // Concatenate the bash command and the saved pid
+        
+        } else if (strcmp (argv[1], "ucp-mem") == 0) {
 
-}
-perror ("Erro: ") ; /* execve nãoo funcionou */
+            printf ("# CPU AND MEMORY USAGE #\n");
+            strcpy(comma, "ps -e -o pid,pcpu | grep ");
+            strcat(comma, save_pid);
+            strcat(comma, ";pmap "); // Show the memory consumption
+            strcat(comma, save_pid); 
+            strcat(comma, " | grep -i total");
+        }
+    
+        for (int cont = 0; cont < 3; cont++) {
+            system(comma);
+            usleep(500000);
+        }
+        strcpy(comma, "kill "); // Kill the child process
+        strcat(comma, save_pid);
+        system(comma);
+    }
 
-printf ("Tchau !\n") ;
-exit(0) ; /* encerra o processo com sucesso (código 0) */ 
+    perror("Error: "); 
 
+    exit(0); // Terminate the process with success
+    return 0;
 }
