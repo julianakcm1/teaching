@@ -24,11 +24,11 @@
 ### Discussão Introdutória
 * Preparatório para o processo:
 <p>Durante a avaliação do tema, o grupo precisou conhecer e dominar alguns pré-requisitos básicos relacionados ao
-processamento de dados na <i>UCP</i> e ao consumo da memória <i>RAM</i>. Com isso, a equipe necessitou adquirir conhecimentos acerca de como funciona a função <i>FORK</i> e qual a natureza da relação entre os processos que ela cria, bem como entender o procedimento de <i>ALOCAÇÃO DE MEMÓRIA</i> na linguagem <b>C</b> e como controlá-lo a partir do método de gerenciamento de processos que a função <i>FORK</i> oferece.
+processamento de dados na <i>UCP</i> e ao consumo da memória <i>RAM</i>.Com isso, a equipe necessitou informar-se acerca de como funciona a função <i>FORK</i> e qual a natureza da relação entre os processos que ela cria, bem como também entender o procedimento de <i>ALOCAÇÃO DE MEMÓRIA</i> na linguagem <b>C</b> e como controlá-lo a partir do método de gerenciamento de processos que a função <i>FORK</i> oferece.
 </p>
 
 * Entendendo o Procedimento:
-<p>O procedimento consiste basicamente em replicar um processo de identificação "x", e a partir disso
+<p>O procedimento consiste basicamente em replicar um processo de identificação x(esse novo processo é chamado de processo filho),e a partir disso controlá-lo por meio do processo original(chamado de processo pai).O processo filho é idêntico ao processo pai
 </p>
 
 
