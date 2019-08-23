@@ -19,7 +19,7 @@
 
 * **Gráfico de consumo da CPU e da MEMÓRIA**:
 
-![GRAFICO](https://i.imgur.com/f49cprn.png)
+![GRAFICO](https://i.imgur.com/7xEdD0J.png)
 
 ### Discussão Introdutória
 * Preparatório para o processo:
@@ -74,7 +74,7 @@ e o reserva de acordo com o tipo de variável utilizada, nesse caso, o "characte
 
 ## Utilização intensa da UCP
 
-Com o experimento, esperávamos que após o uso da UCP elevar-se ao máximo, a máquina travaria, porém, ao observarmos os dados  resultantes do monitoramento, descobrimos que isso não ocorre, bem como notamos que ao ultrapassar seu uso máximo, o proces sador aparentemente tenta regular a intensidade de uso na margem dos 100 %. Conforme mostra o gráfico:
+Com o experimento, esperávamos que após o uso da UCP elevar-se ao máximo, a máquina travaria, porém, ao observarmos os dados  resultantes do monitoramento, descobrimos que isso não ocorre, bem como notamos que ao ultrapassar seu uso máximo, o processador aparentemente tenta regular a intensidade de uso na margem dos 100 %. Conforme mostra o gráfico:
 
 ![GRAFICO](https://i.imgur.com/7xEdD0J.png)
 
@@ -82,10 +82,13 @@ Com o experimento, esperávamos que após o uso da UCP elevar-se ao máximo, a m
 
 ![GRAFICO](https://i.imgur.com/h0sPfAC.png)
 
-TODO: explicar se o comportamento da curva **UCP** foi o esperado, sempre justificando sua resposta, referenciando o código fonte do programa e o gráfico do experimento realizado.
-
 ## Utilização intensa da UCP e memória
 
-á com o comando ucp-mem o processador se comportou da mesma forma do processo anterior mas, desta vez, alocou memória ao máximo de forma a crescer linearmente. Assim, fazendo o computadador travar, pois diferente do processador que faz a mediação dos processos a memória pŕincipal uma vez alocada só é esavaziada por comandos ou na finalização do processo.   
+Neste experimento, o acompanhamento do processador se deu da mesma maneira que no teste anterior, e sua curva de crescimento foi novamente linear, entretanto, o mesmo não ocorreu com a memória. O resultado avaliado nessa, apresentou uma curva crescente de forma linear,o que já era o esperado pela equipe.Vide o gráfico:
 
-TODO: explicar se o comportamento da curva **UCP-MEM** foi o esperado, sempre justificando sua resposta, referenciando o código fonte do programa e o gráfico do experimento realizado.
+![GRAFICO](https://i.imgur.com/FKg7JYS.png)
+
+* Dados:
+
+![GRAFICO](https://i.imgur.com/XZ4AMz6.png)
+
