@@ -35,12 +35,31 @@ O procedimento consiste basicamente em replicar um processo de identificação x
 
 * Descrevendo o que foi feito:
 
-<p>
+<p>	
+1. Incluindo bibliotecas e Declarando variáveis:
+	
+* Bibliotecas:
+
 Inicialmente,incluimos as bibliotecas <b>sys/types.h</b> e <b>unistd.h</b> para podermos usar a chamada de sistema de criação de processos,a <b>fork()</b>.Após isso,a mesma retorna um número, que será o nosso <b>pid</b>,ou seja,nosso <b>identificador
 </b> do processo que foi criado(logo mais utilizaremos esse <i>pid</i> para manipularmos comandos para o monitoramento).
+
+<b>obs: Além das duas bibliotecas citadas utilizamos algumas outras que irão permitir dar comandos para interagir com o <i>SO</i>, entre outras funionalidades necessárias.</b>
+
+* Variáveis:
+
+Primeiro,declaramos uma variável do tipo inteira chamada pid,que irá armazenar o <b>id</b> do processo criado(id dado pela fork).Após isso, declaramos duas strings,a "<i>comma</i>", que irá armazenar os comandos de monitoramento que serão dados ao sistema durante a execução,e a "<i>save_pid</i>",que será responsável por armazenar o pid do processo.
+
 </p>
 
 <p>
+2. Checando se a replicação foi válida e o Processo tratado: 
+
+Após a função "<i>fork</i>" retornar o valor do pid na variável 'pid',analizamos:
+
+* Se "<b>pid</b>" > 0, o processo foi criado com "<i>SUCESSO </i>",e o processo atual é o pai;
+* Se "<b>pid</b>" == 0, o processo foi criado com "<i>SUCESSO </i>",e o processo atual é o filho;
+* Se "<b>pid</b>" > 0, houve <b>erro</b> na criação do processo!;
+
 </p>
 
 
