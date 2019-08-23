@@ -33,10 +33,10 @@ processamento de dados na <i>UCP</i> e ao consumo da memória <i>RAM</i>.Com iss
 O procedimento consiste basicamente em replicar um processo de identificação x(esse novo processo é chamado de processo filho),e a partir disso controlá-lo por meio do processo original(chamado de processo pai).O processo filho é idêntico ao processo pai, porém, ao longo da execução de ambos eles irão se distinguir.
 </p>
 
-**Descrevendo o que foi feito:
+* Descrevendo o que foi feito:
 
 <p>
-Inicialmente incluimos as bibliotecas <b>sys/types.h</b> e <b>unistd.h</b> para podermos usar a chamada de sistema de criação de processos,a <b>fork()</b>.Com isso,a mesma retorna um número, que será o nosso <b>pid</b>,ou seja,nosso <b>identificador
+Inicialmente,incluimos as bibliotecas <b>sys/types.h</b> e <b>unistd.h</b> para podermos usar a chamada de sistema de criação de processos,a <b>fork()</b>.Após isso,a mesma retorna um número, que será o nosso <b>pid</b>,ou seja,nosso <b>identificador
 </b> do processo que foi criado(logo mais utilizaremos esse <i>pid</i> para manipularmos comandos para o monitoramento).
 </p>
 
