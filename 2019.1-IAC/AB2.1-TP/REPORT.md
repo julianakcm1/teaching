@@ -60,6 +60,16 @@ Após a função "<i>fork</i>" retornar o valor do pid na variável 'pid',analiz
 * Se "<b>pid</b>" == 0, o processo foi criado com "<i>SUCESSO </i>",e o processo atual é o filho;
 * Se "<b>pid</b>" > 0, houve <b>erro</b> na criação do processo!;
 
+* Explicando o processo:
+
+Inicialmente,o processo pai coordena a execução do processo filho por meio da inserção de comandos na chamada de sistema.
+Esses comandos podem ser: "ucp" ou "ucp-mem", que a monitoram o uso do processador(apenas) e do processador e da memória
+(juntos),respectivamente, a partir da execução do filho.Para isso, o processo filho entra em um estado de looping infinito,
+sendo que esse é monitorado pelo pai, que permite esse estado por 10 segundos, e, logo após esse período, o processo pai finaliza o filho.
+* Sobre os comandos:
+O comando 'ucp' consiste em fazer o monitoramento apenas da CPU que, por meio do pŕocesso filho, força o processador ao máximo.Já o comando "ucp-mem" inspenciona o processo em questão, além do consumo da memória principal, ao ultilizar a alocação de memória por meio da função "Malloc". O comando malloc aloca um determinado espaço de memória ram para uso,
+e o reserva de acordo com o tipo de variável utilizada, nesse caso, o "character", que corresponde a 1 Byte / 8 bits.
+  
 </p>
 
 
