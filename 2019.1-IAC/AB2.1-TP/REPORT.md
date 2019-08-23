@@ -28,7 +28,7 @@ processamento de dados na <i>UCP</i> e ao consumo da memória <i>RAM</i>. Com is
 </p>
 
 * Entendendo o Procedimento:
-<p>O procedimento consiste basicamente em replicar um processo de identificação x, e a partir dis
+<p>O procedimento consiste basicamente em replicar um processo de identificação "x", e a partir disso
 </p>
 
 
