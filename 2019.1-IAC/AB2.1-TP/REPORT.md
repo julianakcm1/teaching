@@ -52,7 +52,7 @@ Para Pid:
 
 * Se **pid** > 0, o processo filho foi criado com **SUCESSO**;
 * Se **pid** == 0, o processo foi criado com **SUCESSO** e o processo atual é o filho;
-* Se **pid** < 0, houve erro na criação do processo!
+* Se **pid** < 0, houve erro na criação do processo.
 
 * Explicando o processo:
 
