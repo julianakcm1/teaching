@@ -40,7 +40,7 @@ O procedimento consiste em replicar um processo de identificação x (esse novo 
 Incluímos as bibliotecas **sys/types.h** e **unistd.h** para podermos usar uma chamada de sistema de criação de processos, 
 a partir da chamada fork(). Após isso, tal chamada retorna um número, que originará o nosso **pid**, o qual será nosso identificador
 relativo ao processo que foi criado.
-**obs: Além das duas bibliotecas citadas utilizamos algumas outras que irão permitir dar comandos para interagir com o SO, entre outras funcionalidades necessárias.**
+**Obs: Além das duas bibliotecas citadas utilizamos algumas outras que irão permitir dar comandos para interagir com o SO, entre outras funcionalidades necessárias.**
 
 * Variáveis:
 
