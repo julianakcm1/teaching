@@ -1,5 +1,1 @@
-#Teaching
-
-##Naming
-
-[year].[semester]-[class]-[subject]
+# Trabalho em grupo da disciplina Introdução à Computação
